@@ -1,0 +1,55 @@
+MenuBegin
+WindowBegin
+	Position=(600,50)
+	Color=(255,255,255)
+	Id=0
+WindowEnd
+ButtonBegin
+	Position=(280,50)
+	Color=(255,153,204)
+	HiglightColor=(255,204,204)
+	Name=Button1
+	WindowId=0
+ButtonEnd
+ButtonBegin
+	Position=(280, 200)
+	Color=(255,153,204)
+	HiglightColor=(255,204,204)
+	Name=Button2
+	WindowId=0
+ButtonEnd
+ButtonBegin
+	Position=(280,350)
+	Color=(255,153,204)
+	HiglightColor=(255,204,204)
+	Name=Button3
+	WindowId=0
+ButtonEnd  
+
+WindowBegin
+Position=(50,50)
+	Color=(100,100,100)
+	Id=1
+WindowEnd
+ButtonBegin
+	Position=(280,50)
+	Color=(255,153,204)
+	HiglightColor=(255,204,204)
+	Name=Button1
+	WindowId=1
+ButtonEnd
+ButtonBegin
+	Position=(280, 200)
+	Color=(255,153,204)
+	HiglightColor=(255,204,204)
+	Name=Button2
+	WindowId=1
+ButtonEnd
+ButtonBegin
+	Position=(280,350)
+	Color=(255,153,204)
+	HiglightColor=(255,204,204)
+	Name=Button3
+	WindowId=1
+ButtonEnd
+MenuEnd
