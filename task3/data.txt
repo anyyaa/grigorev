@@ -1,55 +1,84 @@
 MenuBegin
 WindowBegin
-	Position=(600,50)
-	Color=(255,255,255)
+	Position=(50,50)
+	Color=(200,200,200)
 	Id=0
 WindowEnd
 ButtonBegin
-	Position=(280,50)
-	Color=(255,153,204)
-	HiglightColor=(255,204,204)
+	Position=(100,85)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
 	Name=Button1
 	WindowId=0
 ButtonEnd
 ButtonBegin
-	Position=(280, 200)
-	Color=(255,153,204)
-	HiglightColor=(255,204,204)
+	Position=(100, 175)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
 	Name=Button2
 	WindowId=0
 ButtonEnd
 ButtonBegin
-	Position=(280,350)
-	Color=(255,153,204)
-	HiglightColor=(255,204,204)
+	Position=(100, 265)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
 	Name=Button3
 	WindowId=0
-ButtonEnd  
+ButtonEnd
+
 
 WindowBegin
-Position=(50,50)
-	Color=(100,100,100)
+	Position=(400,50)
+	Color=(200,200,200)
 	Id=1
 WindowEnd
 ButtonBegin
-	Position=(280,50)
-	Color=(255,153,204)
-	HiglightColor=(255,204,204)
+	Position=(450,85)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
 	Name=Button1
 	WindowId=1
 ButtonEnd
 ButtonBegin
-	Position=(280, 200)
-	Color=(255,153,204)
-	HiglightColor=(255,204,204)
+	Position=(450, 175)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
 	Name=Button2
 	WindowId=1
 ButtonEnd
 ButtonBegin
-	Position=(280,350)
-	Color=(255,153,204)
-	HiglightColor=(255,204,204)
+	Position=(450, 265)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
 	Name=Button3
 	WindowId=1
+ButtonEnd
+
+
+WindowBegin
+	Position=(750,50)
+	Color=(200,200,200)
+	Id=2
+WindowEnd
+ButtonBegin
+	Position=(800,85)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
+	Name=Button1
+	WindowId=2
+ButtonEnd
+ButtonBegin
+	Position=(800, 175)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
+	Name=Button2
+	WindowId=2
+ButtonEnd
+ButtonBegin
+	Position=(800, 265)
+	Color=(51,51,102)
+	HiglightColor=(12,12,105)
+	Name=Button3
+	WindowId=2
 ButtonEnd
 MenuEnd
