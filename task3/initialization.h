@@ -4,6 +4,6 @@
 
 #include "structs.h"
 
-void init(char* filename, Menu* menu);
+void init(char* filename);
 
 #endif 
