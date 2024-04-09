@@ -3,9 +3,11 @@
 #define DRAWING_H
 
 #include <SDL.h>
+#include <stdbool.h>
 #include "structs.h"
 
 void drawButtonsForWindow(SDL_Renderer* renderer, Button* buttons, int buttonsCount, int windowId, int selectedButtonIndex);
-int createWindows(SDL_Window** windows, SDL_Renderer** renderers);
+void getWindow(Menu* menu, SDL_Renderer* renderer, int id);
+void getPressed(int selectedButtonIndex, bool* windowsOpened);
 
 #endif
