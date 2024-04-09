@@ -2,21 +2,30 @@
 
 #include "drawing.h"
 #include "structs.h"
+#include <stdbool.h>
 
-const int WINDOW_WIDTH = 800;
-const int WINDOW_HEIGHT = 600;
+
 
 Menu menu;
+
+void getWindow(Menu* menu, SDL_Renderer* renderer, int id) {
+
+    Window window = menu->windows[id];
+    SDL_Rect rect = { window.position.x, window.position.y, 200, 300 };
+    SDL_SetRenderDrawColor(renderer, window.color.red, window.color.green, window.color.blue, 255);
+    SDL_RenderFillRect(renderer, &rect);
+
+}
 
 void drawButtonsForWindow(SDL_Renderer* renderer, Button* buttons, int buttonsCount, int windowId, int selectedButtonIndex) {
     for (int i = 0; i < buttonsCount; i++) {
         if (buttons[i].windowId == windowId) {
-            SDL_Rect buttonRect = { buttons[i].position.x, buttons[i].position.y, 200, 100 };
+            SDL_Rect buttonRect = { buttons[i].position.x, buttons[i].position.y, 100, 50 };
             if (i == selectedButtonIndex) {
-                buttonRect.x -= 4;
-                buttonRect.y -= 4;
-                buttonRect.w += 8;
-                buttonRect.h += 8;
+                buttonRect.x -= 3;
+                buttonRect.y -= 3;
+                buttonRect.w += 6;
+                buttonRect.h += 6;
             }
             SDL_Color buttonColor = { buttons[i].color.red, buttons[i].color.green, buttons[i].color.blue };
             SDL_SetRenderDrawColor(renderer, buttonColor.r, buttonColor.g, buttonColor.b, SDL_ALPHA_OPAQUE);
@@ -24,27 +33,23 @@ void drawButtonsForWindow(SDL_Renderer* renderer, Button* buttons, int buttonsCo
         }
     }
 }
-
-int createWindows(SDL_Window** windows, SDL_Renderer** renderers) {
-    for (int i = 0; i < menu.windowsCounter; i++) {
-        windows[i] = SDL_CreateWindow("SDL Window with Buttons", menu.windows[i].position.x, menu.windows[i].position.y, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_SHOWN);
-        if (windows[i] == NULL) {
-            printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
-            for (int j = 0; j < i; j++) {
-                SDL_DestroyWindow(windows[j]);
-            }
-            return 0;
-        }
-
-        renderers[i] = SDL_CreateRenderer(windows[i], -1, SDL_RENDERER_ACCELERATED);
-        if (renderers[i] == NULL) {
-            printf("Could not create the renderer: %s\n", SDL_GetError());
-            for (int j = 0; j < i; j++) {
-                SDL_DestroyRenderer(renderers[j]);
-                SDL_DestroyWindow(windows[j]);
-            }
-            return 0;
-        }
+void getPressed(int selectedButtonIndex, bool* windowsOpened) {
+    Button* selectedButton = &menu.buttons[selectedButtonIndex];
+    if (selectedButton->color.red == selectedButton->highlightColor.red &&
+        selectedButton->color.green == selectedButton->highlightColor.green &&
+        selectedButton->color.blue == selectedButton->highlightColor.blue) {
+        selectedButton->color = selectedButton->originalColor;
     }
-    return 1;
+    else {
+        selectedButton->color = selectedButton->highlightColor;
+        if (selectedButtonIndex % 3 == 0) {
+
+            windowsOpened[selectedButtonIndex / 3 + 1] = true;
+        }
+        if (selectedButtonIndex % 3 == 1 && selectedButtonIndex < 5) {
+
+            windowsOpened[selectedButtonIndex / 3 + 1] = false;
+        }
+
+    }
 }
