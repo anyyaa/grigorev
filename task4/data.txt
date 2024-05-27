@@ -1,0 +1,19 @@
+LevelBegin
+	FrogCount=2
+	SnakeSpeed=100
+	Color=(0,255,0)
+	LevelId=0
+LevelEnd
+LevelBegin
+	FrogCount=2
+	SnakeSpeed=80
+	Color=(0,255,255)
+	LevelId=1
+LevelEnd
+LevelBegin
+	FrogCount=1
+	SnakeSpeed=60
+	Color=(0,0,255)
+	LevelId=2
+LevelEnd
+MenuEnd
